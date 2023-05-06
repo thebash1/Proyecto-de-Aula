@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyectoaula;
 
+import java.awt.Color;
+
 /**
  *
  * @author daniel
@@ -44,8 +46,8 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LastNameSeparator = new javax.swing.JSeparator();
         CareerSeparator = new javax.swing.JSeparator();
         TeamSoccerSeparator = new javax.swing.JSeparator();
-        Login = new javax.swing.JPanel();
-        LoginText = new javax.swing.JTextField();
+        LoginText = new javax.swing.JLabel();
+        LoginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -114,6 +116,17 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         ExitButton.setBorder(null);
         ExitButton.setBorderPainted(false);
         ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseExited(evt);
+            }
+        });
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitButtonActionPerformed(evt);
@@ -169,25 +182,34 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, -1));
         fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 220, -1));
 
-        LoginText.setBackground(new java.awt.Color(51, 51, 51));
-        LoginText.setForeground(new java.awt.Color(255, 255, 255));
-        LoginText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LoginText.setBackground(new java.awt.Color(255, 255, 255));
+        LoginText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        LoginText.setForeground(new java.awt.Color(0, 0, 0));
+        LoginText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LoginText.setText("ENTRAR");
-        LoginText.setToolTipText("");
         LoginText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fondoPrincipal.add(LoginText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
 
-        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
-        Login.setLayout(LoginLayout);
-        LoginLayout.setHorizontalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        LoginLayout.setVerticalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        fondoPrincipal.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 30));
+        LoginButton.setBackground(new java.awt.Color(0, 102, 0));
+        LoginButton.setFont(new java.awt.Font("Roboto Black", 0, 16)); // NOI18N
+        LoginButton.setForeground(new java.awt.Color(0, 0, 0));
+        LoginButton.setBorder(null);
+        LoginButton.setBorderPainted(false);
+        LoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseExited(evt);
+            }
+        });
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
 
         getContentPane().add(fondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -196,6 +218,8 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
 
     private void HeaderPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMousePressed
         // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
     }//GEN-LAST:event_HeaderPanelMousePressed
 
     private void HeaderPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseClicked
@@ -203,12 +227,49 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderPanelMouseClicked
 
     private void HeaderPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseDragged
-        // TODO add your handling code here:        
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+        
     }//GEN-LAST:event_HeaderPanelMouseDragged
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void ExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonMouseClicked
+
+    private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
+        // TODO add your handling code here:
+        ExitButton.setBackground(Color.red);
+        ExitButton.setForeground(Color.white);
+    }//GEN-LAST:event_ExitButtonMouseEntered
+
+    private void ExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseExited
+        // TODO add your handling code here:
+        ExitButton.setBackground(Color.white);
+        ExitButton.setForeground(Color.black);
+    }//GEN-LAST:event_ExitButtonMouseExited
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
+        // TODO add your handling code here:
+        LoginButton.setBackground(new Color(0, 153, 0));
+        
+    }//GEN-LAST:event_LoginButtonMouseEntered
+
+    private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
+        // TODO add your handling code here:
+        LoginButton.setForeground(new Color(102, 102, 102));
+    }//GEN-LAST:event_LoginButtonMouseExited
  
     /**
      * @param args the command line arguments
@@ -248,8 +309,8 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     private javax.swing.JPanel ImagePanel;
     private javax.swing.JTextField LastName;
     private javax.swing.JSeparator LastNameSeparator;
-    private javax.swing.JPanel Login;
-    private javax.swing.JTextField LoginText;
+    private javax.swing.JButton LoginButton;
+    private javax.swing.JLabel LoginText;
     private javax.swing.JLabel LogoUPC;
     private javax.swing.JTextField Name;
     private javax.swing.JSeparator NameSeparator;
