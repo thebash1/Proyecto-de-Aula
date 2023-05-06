@@ -155,6 +155,11 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         Name.setForeground(new java.awt.Color(153, 153, 153));
         Name.setText("Nombre");
         Name.setBorder(null);
+        Name.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                NameMousePressed(evt);
+            }
+        });
         fondoPrincipal.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 30));
 
         LastName.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,6 +167,14 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LastName.setForeground(new java.awt.Color(153, 153, 153));
         LastName.setText("Apellido");
         LastName.setBorder(null);
+        LastName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LastNameMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                LastNameMousePressed(evt);
+            }
+        });
         fondoPrincipal.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 30));
 
         Career.setBackground(new java.awt.Color(255, 255, 255));
@@ -169,6 +182,11 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         Career.setForeground(new java.awt.Color(153, 153, 153));
         Career.setText("Carrera");
         Career.setBorder(null);
+        Career.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CareerMousePressed(evt);
+            }
+        });
         fondoPrincipal.add(Career, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, 30));
 
         TeamSoccer.setBackground(new java.awt.Color(255, 255, 255));
@@ -176,6 +194,11 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         TeamSoccer.setForeground(new java.awt.Color(153, 153, 153));
         TeamSoccer.setText("Equipo");
         TeamSoccer.setBorder(null);
+        TeamSoccer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TeamSoccerMousePressed(evt);
+            }
+        });
         fondoPrincipal.add(TeamSoccer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 220, 30));
         fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 220, -1));
         fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 220, -1));
@@ -197,6 +220,9 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LoginButton.setBorderPainted(false);
         LoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseEntered(evt);
             }
@@ -270,6 +296,96 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         // TODO add your handling code here:
         LoginButton.setForeground(new Color(102, 102, 102));
     }//GEN-LAST:event_LoginButtonMouseExited
+
+    private void NameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameMousePressed
+        // TODO add your handling code here:
+        if(Name.getText().equals("Nombre")) {
+            Name.setText("");
+            Name.setForeground(Color.black);
+        }
+        if(LastName.getText().equals("Apellido")){
+            LastName.setText("Apellido");
+            LastName.setForeground(Color.gray);
+        }
+        if(Career.getText().equals("Carrera")){
+            Career.setText("Carrera");
+            Career.setForeground(Color.gray);
+        }
+        if(TeamSoccer.getText().equals("Equipo")){
+            TeamSoccer.setText("Equipo");
+            TeamSoccer.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_NameMousePressed
+
+    private void LastNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LastNameMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LastNameMouseEntered
+
+    private void LastNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LastNameMousePressed
+        // TODO add your handling code here:
+        if(LastName.getText().equals("Apellido")){
+            LastName.setText("");
+            LastName.setForeground(Color.black);
+        }
+        if(Name.getText().equals("Nombre")) {
+            Name.setText("Nombre");
+            Name.setForeground(Color.gray);
+        }
+        if(Career.getText().equals("Carrera")){
+            Career.setText("Carrera");
+            Career.setForeground(Color.gray);
+        }
+        if(TeamSoccer.getText().equals("Equipo")){
+            TeamSoccer.setText("Equipo");
+            TeamSoccer.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_LastNameMousePressed
+
+    private void CareerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CareerMousePressed
+        // TODO add your handling code here:
+        if(Career.getText().equals("Carrera")){
+            Career.setText("");
+            Career.setForeground(Color.black);
+        }
+        if(Name.getText().equals("Nombre")) {
+            Name.setText("Nombre");
+            Name.setForeground(Color.gray);
+        }
+        if(LastName.getText().equals("Apellido")){
+            LastName.setText("Apellido");
+            LastName.setForeground(Color.gray);
+        }
+        if(TeamSoccer.getText().equals("Equipo")){
+            TeamSoccer.setText("Equipo");
+            TeamSoccer.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_CareerMousePressed
+
+    private void TeamSoccerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TeamSoccerMousePressed
+        // TODO add your handling code here:
+        if(TeamSoccer.getText().equals("Equipo")){
+            TeamSoccer.setText("");
+            TeamSoccer.setForeground(Color.black);
+        }
+        if(Name.getText().equals("Nombre")) {
+            Name.setText("Nombre");
+            Name.setForeground(Color.gray);
+        }
+        if(LastName.getText().equals("Apellido")){
+            LastName.setText("Apellido");
+            LastName.setForeground(Color.gray);
+        }
+        if(Career.getText().equals("Carrera")){
+            Career.setText("Carrera");
+            Career.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_TeamSoccerMousePressed
+
+    private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
+        // TODO add your handling code here:
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Usuario "+Name.getText()+" registrado correctamente!");
+        
+    }//GEN-LAST:event_LoginButtonMouseClicked
  
     /**
      * @param args the command line arguments
