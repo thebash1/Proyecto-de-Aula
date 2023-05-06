@@ -28,23 +28,114 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         fondoPrincipal = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 528, -1, -1));
 
         fondoPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        fondoPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout fondoPrincipalLayout = new javax.swing.GroupLayout(fondoPrincipal);
-        fondoPrincipal.setLayout(fondoPrincipalLayout);
-        fondoPrincipalLayout.setHorizontalGroup(
-            fondoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        jPanel1.setBackground(new java.awt.Color(0, 102, 0));
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("imagen");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        fondoPrincipalLayout.setVerticalGroup(
-            fondoPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        fondoPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 250, 500));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("TORNEO DE FUTBOL UPC AGUACHICA");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        fondoPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 70));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("      REGISTRARSE");
+        fondoPrincipal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 200, 50));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("LOGO UPC");
+        fondoPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 150, 50));
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField1.setText("Nombre");
+        jTextField1.setBorder(null);
+        fondoPrincipal.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, 30));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Apellido");
+        jTextField2.setBorder(null);
+        fondoPrincipal.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 180, 30));
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField3.setText("Carrera");
+        jTextField3.setBorder(null);
+        fondoPrincipal.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 180, 30));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField4.setText("Equipo");
+        jTextField4.setBorder(null);
+        fondoPrincipal.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 180, 30));
+        fondoPrincipal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 180, -1));
+        fondoPrincipal.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 180, -1));
+        fondoPrincipal.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 180, -1));
+        fondoPrincipal.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 180, -1));
 
         getContentPane().add(fondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -88,6 +179,20 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel fondoPrincipal;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
