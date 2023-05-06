@@ -13,6 +13,9 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     /**
      * Creates new form TorneoDeFutbol
      */
+    
+    int xMouse, yMouse;
+    
     public TorneoDeFutbol() {
         initComponents();
     }
@@ -29,10 +32,10 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         fondoPrincipal = new javax.swing.JPanel();
         ImagePanel = new javax.swing.JPanel();
         Image = new javax.swing.JLabel();
-        Tittle = new javax.swing.JPanel();
-        TittleLetter = new javax.swing.JLabel();
         SingIn = new javax.swing.JLabel();
         LogoUPC = new javax.swing.JLabel();
+        HeaderPanel = new javax.swing.JPanel();
+        ExitButton = new javax.swing.JButton();
         Name = new javax.swing.JTextField();
         LastName = new javax.swing.JTextField();
         Career = new javax.swing.JTextField();
@@ -45,6 +48,9 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LoginText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fondoPrincipal.setBackground(new java.awt.Color(255, 255, 255));
@@ -73,31 +79,6 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
 
         fondoPrincipal.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 250, 500));
 
-        Tittle.setBackground(new java.awt.Color(255, 255, 255));
-
-        TittleLetter.setBackground(new java.awt.Color(255, 255, 255));
-        TittleLetter.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        TittleLetter.setForeground(new java.awt.Color(0, 0, 0));
-        TittleLetter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TittleLetter.setText("TORNEO DE FUTBOL UPC AGUACHICA");
-
-        javax.swing.GroupLayout TittleLayout = new javax.swing.GroupLayout(Tittle);
-        Tittle.setLayout(TittleLayout);
-        TittleLayout.setHorizontalGroup(
-            TittleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TittleLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TittleLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        TittleLayout.setVerticalGroup(
-            TittleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TittleLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TittleLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        fondoPrincipal.add(Tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 70));
-
         SingIn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
         SingIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -109,6 +90,52 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LogoUPC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LogoUPC.setText("LOGO UPC");
         fondoPrincipal.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 250, 50));
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                HeaderPanelMouseDragged(evt);
+            }
+        });
+        HeaderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HeaderPanelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HeaderPanelMousePressed(evt);
+            }
+        });
+
+        ExitButton.setBackground(new java.awt.Color(255, 255, 255));
+        ExitButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        ExitButton.setForeground(new java.awt.Color(51, 51, 51));
+        ExitButton.setText("X");
+        ExitButton.setToolTipText("");
+        ExitButton.setBorder(null);
+        ExitButton.setBorderPainted(false);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HeaderPanelLayout = new javax.swing.GroupLayout(HeaderPanel);
+        HeaderPanel.setLayout(HeaderPanelLayout);
+        HeaderPanelLayout.setHorizontalGroup(
+            HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderPanelLayout.createSequentialGroup()
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 760, Short.MAX_VALUE))
+        );
+        HeaderPanelLayout.setVerticalGroup(
+            HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        fondoPrincipal.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
 
         Name.setBackground(new java.awt.Color(255, 255, 255));
         Name.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -166,6 +193,22 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HeaderPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HeaderPanelMousePressed
+
+    private void HeaderPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HeaderPanelMouseClicked
+
+    private void HeaderPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseDragged
+        // TODO add your handling code here:        
+    }//GEN-LAST:event_HeaderPanelMouseDragged
+
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitButtonActionPerformed
  
     /**
      * @param args the command line arguments
@@ -183,28 +226,24 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TorneoDeFutbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TorneoDeFutbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TorneoDeFutbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TorneoDeFutbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TorneoDeFutbol().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TorneoDeFutbol().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Career;
     private javax.swing.JSeparator CareerSeparator;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JPanel HeaderPanel;
     private javax.swing.JLabel Image;
     private javax.swing.JPanel ImagePanel;
     private javax.swing.JTextField LastName;
@@ -217,8 +256,6 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     private javax.swing.JLabel SingIn;
     private javax.swing.JTextField TeamSoccer;
     private javax.swing.JSeparator TeamSoccerSeparator;
-    private javax.swing.JPanel Tittle;
-    private javax.swing.JLabel TittleLetter;
     private javax.swing.JPanel fondoPrincipal;
     // End of variables declaration//GEN-END:variables
 }
