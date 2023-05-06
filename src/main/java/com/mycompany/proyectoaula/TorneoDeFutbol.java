@@ -41,8 +41,8 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         LastNameSeparator = new javax.swing.JSeparator();
         CareerSeparator = new javax.swing.JSeparator();
         TeamSoccerSeparator = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        Login = new javax.swing.JPanel();
+        LoginText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,25 +142,25 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
         fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, -1));
         fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 220, -1));
 
-        jTextField1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("ENTRAR");
-        jTextField1.setToolTipText("");
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LoginText.setBackground(new java.awt.Color(51, 51, 51));
+        LoginText.setForeground(new java.awt.Color(255, 255, 255));
+        LoginText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LoginText.setText("ENTRAR");
+        LoginText.setToolTipText("");
+        LoginText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LoginText, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        fondoPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 30));
+        fondoPrincipal.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 30));
 
         getContentPane().add(fondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -209,6 +209,8 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     private javax.swing.JPanel ImagePanel;
     private javax.swing.JTextField LastName;
     private javax.swing.JSeparator LastNameSeparator;
+    private javax.swing.JPanel Login;
+    private javax.swing.JTextField LoginText;
     private javax.swing.JLabel LogoUPC;
     private javax.swing.JTextField Name;
     private javax.swing.JSeparator NameSeparator;
@@ -218,7 +220,5 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
     private javax.swing.JPanel Tittle;
     private javax.swing.JLabel TittleLetter;
     private javax.swing.JPanel fondoPrincipal;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
