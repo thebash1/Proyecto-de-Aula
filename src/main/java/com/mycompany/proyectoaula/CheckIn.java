@@ -10,15 +10,20 @@ import java.awt.Color;
  *
  * @author daniel
  */
-public class TorneoDeFutbol extends javax.swing.JFrame {
+public class CheckIn extends javax.swing.JFrame {
 
     /**
-     * Creates new form TorneoDeFutbol
+     * Creates new form CheckIn
      */
     
-    int xMouse, yMouse;
+    int xMouse,
+
+    /**
+     * Creates new form CheckIn
+     */
+    yMouse;
     
-    public TorneoDeFutbol() {
+    public CheckIn() {
         initComponents();
     }
 
@@ -404,15 +409,16 @@ public class TorneoDeFutbol extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TorneoDeFutbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CheckIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new TorneoDeFutbol().setVisible(true);
+            new CheckIn().setVisible(true);
         });
     }
 
