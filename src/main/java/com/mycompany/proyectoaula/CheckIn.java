@@ -43,10 +43,10 @@ public class CheckIn extends javax.swing.JFrame {
         LogoUPC = new javax.swing.JLabel();
         HeaderPanel = new javax.swing.JPanel();
         ExitButton = new javax.swing.JButton();
-        Name = new javax.swing.JTextField();
-        LastName = new javax.swing.JTextField();
-        Career = new javax.swing.JTextField();
-        TeamSoccer = new javax.swing.JTextField();
+        varDocumento = new javax.swing.JTextField();
+        varName = new javax.swing.JTextField();
+        varLastName = new javax.swing.JTextField();
+        varPhone = new javax.swing.JTextField();
         NameSeparator = new javax.swing.JSeparator();
         LastNameSeparator = new javax.swing.JSeparator();
         CareerSeparator = new javax.swing.JSeparator();
@@ -65,26 +65,28 @@ public class CheckIn extends javax.swing.JFrame {
 
         ImagePanel.setBackground(new java.awt.Color(0, 102, 0));
 
+        Image.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         Image.setForeground(new java.awt.Color(0, 0, 0));
-        Image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Image.setText("imagen");
+        Image.setText("Imagen");
 
         javax.swing.GroupLayout ImagePanelLayout = new javax.swing.GroupLayout(ImagePanel);
         ImagePanel.setLayout(ImagePanelLayout);
         ImagePanelLayout.setHorizontalGroup(
             ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ImagePanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(125, Short.MAX_VALUE)
+                .addComponent(Image)
+                .addGap(120, 120, 120))
         );
         ImagePanelLayout.setVerticalGroup(
             ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ImagePanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(ImagePanelLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(Image)
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
-        fondoPrincipal.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 250, 500));
+        fondoPrincipal.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 500));
 
         SingIn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
@@ -155,56 +157,61 @@ public class CheckIn extends javax.swing.JFrame {
 
         fondoPrincipal.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
 
-        Name.setBackground(new java.awt.Color(255, 255, 255));
-        Name.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        Name.setForeground(new java.awt.Color(153, 153, 153));
-        Name.setText("Nombre");
-        Name.setBorder(null);
-        Name.addMouseListener(new java.awt.event.MouseAdapter() {
+        varDocumento.setBackground(new java.awt.Color(255, 255, 255));
+        varDocumento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varDocumento.setForeground(new java.awt.Color(153, 153, 153));
+        varDocumento.setText("Documento");
+        varDocumento.setBorder(null);
+        varDocumento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                NameMousePressed(evt);
+                varDocumentoMousePressed(evt);
             }
         });
-        fondoPrincipal.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 30));
+        fondoPrincipal.add(varDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 30));
 
-        LastName.setBackground(new java.awt.Color(255, 255, 255));
-        LastName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        LastName.setForeground(new java.awt.Color(153, 153, 153));
-        LastName.setText("Apellido");
-        LastName.setBorder(null);
-        LastName.addMouseListener(new java.awt.event.MouseAdapter() {
+        varName.setBackground(new java.awt.Color(255, 255, 255));
+        varName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varName.setForeground(new java.awt.Color(153, 153, 153));
+        varName.setText("Nombre");
+        varName.setBorder(null);
+        varName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LastNameMouseEntered(evt);
+                varNameMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                LastNameMousePressed(evt);
+                varNameMousePressed(evt);
             }
         });
-        fondoPrincipal.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 30));
+        fondoPrincipal.add(varName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 30));
 
-        Career.setBackground(new java.awt.Color(255, 255, 255));
-        Career.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        Career.setForeground(new java.awt.Color(153, 153, 153));
-        Career.setText("Carrera");
-        Career.setBorder(null);
-        Career.addMouseListener(new java.awt.event.MouseAdapter() {
+        varLastName.setBackground(new java.awt.Color(255, 255, 255));
+        varLastName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varLastName.setForeground(new java.awt.Color(153, 153, 153));
+        varLastName.setText("Apellido");
+        varLastName.setBorder(null);
+        varLastName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                CareerMousePressed(evt);
+                varLastNameMousePressed(evt);
             }
         });
-        fondoPrincipal.add(Career, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, 30));
+        varLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varLastNameActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, 30));
 
-        TeamSoccer.setBackground(new java.awt.Color(255, 255, 255));
-        TeamSoccer.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        TeamSoccer.setForeground(new java.awt.Color(153, 153, 153));
-        TeamSoccer.setText("Equipo");
-        TeamSoccer.setBorder(null);
-        TeamSoccer.addMouseListener(new java.awt.event.MouseAdapter() {
+        varPhone.setBackground(new java.awt.Color(255, 255, 255));
+        varPhone.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varPhone.setForeground(new java.awt.Color(153, 153, 153));
+        varPhone.setText("Telefono");
+        varPhone.setBorder(null);
+        varPhone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                TeamSoccerMousePressed(evt);
+                varPhoneMousePressed(evt);
             }
         });
-        fondoPrincipal.add(TeamSoccer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 220, 30));
+        fondoPrincipal.add(varPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 220, 30));
         fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 220, -1));
         fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 220, -1));
         fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, -1));
@@ -302,95 +309,99 @@ public class CheckIn extends javax.swing.JFrame {
         LoginButton.setForeground(new Color(102, 102, 102));
     }//GEN-LAST:event_LoginButtonMouseExited
 
-    private void NameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameMousePressed
+    private void varDocumentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varDocumentoMousePressed
         // TODO add your handling code here:
-        if(Name.getText().equals("Nombre")) {
-            Name.setText("");
-            Name.setForeground(Color.black);
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("");
+            varDocumento.setForeground(Color.black);
         }
-        if(LastName.getText().equals("Apellido")){
-            LastName.setText("Apellido");
-            LastName.setForeground(Color.gray);
+        if(varName.getText().equals("Apellido")){
+            varName.setText("Apellido");
+            varName.setForeground(Color.gray);
         }
-        if(Career.getText().equals("Carrera")){
-            Career.setText("Carrera");
-            Career.setForeground(Color.gray);
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("Carrera");
+            varLastName.setForeground(Color.gray);
         }
-        if(TeamSoccer.getText().equals("Equipo")){
-            TeamSoccer.setText("Equipo");
-            TeamSoccer.setForeground(Color.gray);
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("Equipo");
+            varPhone.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_NameMousePressed
+    }//GEN-LAST:event_varDocumentoMousePressed
 
-    private void LastNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LastNameMouseEntered
+    private void varNameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varNameMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_LastNameMouseEntered
+    }//GEN-LAST:event_varNameMouseEntered
 
-    private void LastNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LastNameMousePressed
+    private void varNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varNameMousePressed
         // TODO add your handling code here:
-        if(LastName.getText().equals("Apellido")){
-            LastName.setText("");
-            LastName.setForeground(Color.black);
+        if(varName.getText().equals("Apellido")){
+            varName.setText("");
+            varName.setForeground(Color.black);
         }
-        if(Name.getText().equals("Nombre")) {
-            Name.setText("Nombre");
-            Name.setForeground(Color.gray);
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("Nombre");
+            varDocumento.setForeground(Color.gray);
         }
-        if(Career.getText().equals("Carrera")){
-            Career.setText("Carrera");
-            Career.setForeground(Color.gray);
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("Carrera");
+            varLastName.setForeground(Color.gray);
         }
-        if(TeamSoccer.getText().equals("Equipo")){
-            TeamSoccer.setText("Equipo");
-            TeamSoccer.setForeground(Color.gray);
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("Equipo");
+            varPhone.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_LastNameMousePressed
+    }//GEN-LAST:event_varNameMousePressed
 
-    private void CareerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CareerMousePressed
+    private void varLastNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varLastNameMousePressed
         // TODO add your handling code here:
-        if(Career.getText().equals("Carrera")){
-            Career.setText("");
-            Career.setForeground(Color.black);
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("");
+            varLastName.setForeground(Color.black);
         }
-        if(Name.getText().equals("Nombre")) {
-            Name.setText("Nombre");
-            Name.setForeground(Color.gray);
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("Nombre");
+            varDocumento.setForeground(Color.gray);
         }
-        if(LastName.getText().equals("Apellido")){
-            LastName.setText("Apellido");
-            LastName.setForeground(Color.gray);
+        if(varName.getText().equals("Apellido")){
+            varName.setText("Apellido");
+            varName.setForeground(Color.gray);
         }
-        if(TeamSoccer.getText().equals("Equipo")){
-            TeamSoccer.setText("Equipo");
-            TeamSoccer.setForeground(Color.gray);
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("Equipo");
+            varPhone.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_CareerMousePressed
+    }//GEN-LAST:event_varLastNameMousePressed
 
-    private void TeamSoccerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TeamSoccerMousePressed
+    private void varPhoneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varPhoneMousePressed
         // TODO add your handling code here:
-        if(TeamSoccer.getText().equals("Equipo")){
-            TeamSoccer.setText("");
-            TeamSoccer.setForeground(Color.black);
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("");
+            varPhone.setForeground(Color.black);
         }
-        if(Name.getText().equals("Nombre")) {
-            Name.setText("Nombre");
-            Name.setForeground(Color.gray);
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("Nombre");
+            varDocumento.setForeground(Color.gray);
         }
-        if(LastName.getText().equals("Apellido")){
-            LastName.setText("Apellido");
-            LastName.setForeground(Color.gray);
+        if(varName.getText().equals("Apellido")){
+            varName.setText("Apellido");
+            varName.setForeground(Color.gray);
         }
-        if(Career.getText().equals("Carrera")){
-            Career.setText("Carrera");
-            Career.setForeground(Color.gray);
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("Carrera");
+            varLastName.setForeground(Color.gray);
         }
-    }//GEN-LAST:event_TeamSoccerMousePressed
+    }//GEN-LAST:event_varPhoneMousePressed
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
-        javax.swing.JOptionPane.showMessageDialog(this, "¡Usuario "+Name.getText()+" registrado correctamente!");
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Usuario "+varDocumento.getText()+" registrado correctamente!");
         
     }//GEN-LAST:event_LoginButtonMouseClicked
+
+    private void varLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varLastNameActionPerformed
  
     /**
      * @param args the command line arguments
@@ -423,22 +434,22 @@ public class CheckIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Career;
     private javax.swing.JSeparator CareerSeparator;
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JLabel Image;
     private javax.swing.JPanel ImagePanel;
-    private javax.swing.JTextField LastName;
     private javax.swing.JSeparator LastNameSeparator;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel LoginText;
     private javax.swing.JLabel LogoUPC;
-    private javax.swing.JTextField Name;
     private javax.swing.JSeparator NameSeparator;
     private javax.swing.JLabel SingIn;
-    private javax.swing.JTextField TeamSoccer;
     private javax.swing.JSeparator TeamSoccerSeparator;
     private javax.swing.JPanel fondoPrincipal;
+    private javax.swing.JTextField varDocumento;
+    private javax.swing.JTextField varLastName;
+    private javax.swing.JTextField varName;
+    private javax.swing.JTextField varPhone;
     // End of variables declaration//GEN-END:variables
 }
