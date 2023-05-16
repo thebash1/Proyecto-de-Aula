@@ -35,6 +35,7 @@ public class Menu extends javax.swing.JFrame {
         ToRegisterButton = new javax.swing.JButton();
         ManageButton = new javax.swing.JButton();
         ResultsButton = new javax.swing.JButton();
+        LogoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -48,7 +49,7 @@ public class Menu extends javax.swing.JFrame {
         MenuTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         MenuTittle.setForeground(new java.awt.Color(0, 0, 0));
         MenuTittle.setText("MENÚ");
-        MainPanel.add(MenuTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, 50));
+        MainPanel.add(MenuTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 120, 50));
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
         HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -121,7 +122,7 @@ public class Menu extends javax.swing.JFrame {
                 ToRegisterButtonActionPerformed(evt);
             }
         });
-        MainPanel.add(ToRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 200, 50));
+        MainPanel.add(ToRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 200, 50));
 
         ManageButton.setBackground(new java.awt.Color(0, 102, 0));
         ManageButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -137,7 +138,7 @@ public class Menu extends javax.swing.JFrame {
                 ManageButtonMouseExited(evt);
             }
         });
-        MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 200, 50));
+        MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 200, 50));
 
         ResultsButton.setBackground(new java.awt.Color(0, 102, 0));
         ResultsButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -153,13 +154,19 @@ public class Menu extends javax.swing.JFrame {
                 ResultsButtonMouseExited(evt);
             }
         });
-        MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 200, 50));
+        MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 200, 50));
+
+        LogoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        LogoLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        LogoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        LogoLabel.setText("LOGO UPC");
+        MainPanel.add(LogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 350, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,6 +284,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JLabel LogoLabel;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageButton;
     private javax.swing.JLabel MenuTittle;

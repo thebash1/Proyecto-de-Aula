@@ -106,7 +106,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
         LogoUPC.setForeground(new java.awt.Color(0, 0, 0));
         LogoUPC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LogoUPC.setText("LOGO UPC");
-        MainPanel.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 250, 50));
+        MainPanel.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 350, 50));
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
         HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
