@@ -53,6 +53,12 @@ public class CheckIn extends javax.swing.JFrame {
         TeamSoccerSeparator = new javax.swing.JSeparator();
         LoginText = new javax.swing.JLabel();
         LoginButton = new javax.swing.JButton();
+        ExitText = new javax.swing.JLabel();
+        ExitBtn = new javax.swing.JButton();
+        EmailSeparator = new javax.swing.JSeparator();
+        varEmail = new javax.swing.JTextField();
+        AdressSeparator = new javax.swing.JSeparator();
+        varAdress = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -67,38 +73,38 @@ public class CheckIn extends javax.swing.JFrame {
 
         Image.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         Image.setForeground(new java.awt.Color(0, 0, 0));
-        Image.setText("Imagen");
+        Image.setText("Diseño");
 
         javax.swing.GroupLayout ImagePanelLayout = new javax.swing.GroupLayout(ImagePanel);
         ImagePanel.setLayout(ImagePanelLayout);
         ImagePanelLayout.setHorizontalGroup(
             ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ImagePanelLayout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addComponent(Image)
-                .addGap(120, 120, 120))
+                .addGap(94, 94, 94))
         );
         ImagePanelLayout.setVerticalGroup(
             ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ImagePanelLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(219, 219, 219)
                 .addComponent(Image)
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
 
-        fondoPrincipal.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 500));
+        fondoPrincipal.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 250, 500));
 
         SingIn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
         SingIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SingIn.setText("REGISTRARSE");
-        fondoPrincipal.add(SingIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 220, 50));
+        fondoPrincipal.add(SingIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 220, 50));
 
         LogoUPC.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         LogoUPC.setForeground(new java.awt.Color(0, 0, 0));
         LogoUPC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LogoUPC.setText("LOGO UPC");
-        fondoPrincipal.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 250, 50));
+        fondoPrincipal.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 250, 50));
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
         HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -167,7 +173,7 @@ public class CheckIn extends javax.swing.JFrame {
                 varDocumentoMousePressed(evt);
             }
         });
-        fondoPrincipal.add(varDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 30));
+        fondoPrincipal.add(varDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 220, 30));
 
         varName.setBackground(new java.awt.Color(255, 255, 255));
         varName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -182,7 +188,7 @@ public class CheckIn extends javax.swing.JFrame {
                 varNameMousePressed(evt);
             }
         });
-        fondoPrincipal.add(varName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 220, 30));
+        fondoPrincipal.add(varName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 220, 30));
 
         varLastName.setBackground(new java.awt.Color(255, 255, 255));
         varLastName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -199,7 +205,7 @@ public class CheckIn extends javax.swing.JFrame {
                 varLastNameActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(varLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, 30));
+        fondoPrincipal.add(varLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 220, 30));
 
         varPhone.setBackground(new java.awt.Color(255, 255, 255));
         varPhone.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -211,11 +217,16 @@ public class CheckIn extends javax.swing.JFrame {
                 varPhoneMousePressed(evt);
             }
         });
-        fondoPrincipal.add(varPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 220, 30));
-        fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 220, -1));
-        fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 220, -1));
-        fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, -1));
-        fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 220, -1));
+        varPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varPhoneActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 220, 30));
+        fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 203, 220, 10));
+        fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 220, 10));
+        fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 10));
+        fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 220, 10));
 
         LoginText.setBackground(new java.awt.Color(255, 255, 255));
         LoginText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -223,7 +234,7 @@ public class CheckIn extends javax.swing.JFrame {
         LoginText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LoginText.setText("ENTRAR");
         LoginText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fondoPrincipal.add(LoginText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+        fondoPrincipal.add(LoginText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 120, 35));
 
         LoginButton.setBackground(new java.awt.Color(0, 102, 0));
         LoginButton.setFont(new java.awt.Font("Roboto Black", 0, 16)); // NOI18N
@@ -247,7 +258,55 @@ public class CheckIn extends javax.swing.JFrame {
                 LoginButtonActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+        fondoPrincipal.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 120, 35));
+
+        ExitText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        ExitText.setForeground(new java.awt.Color(0, 0, 0));
+        ExitText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ExitText.setText("REGRESAR");
+        fondoPrincipal.add(ExitText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+
+        ExitBtn.setBackground(new java.awt.Color(0, 102, 0));
+        ExitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitBtnActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(ExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+        fondoPrincipal.add(EmailSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 220, 10));
+
+        varEmail.setBackground(new java.awt.Color(255, 255, 255));
+        varEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varEmail.setForeground(new java.awt.Color(153, 153, 153));
+        varEmail.setText("Correo");
+        varEmail.setBorder(null);
+        varEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                varEmailMousePressed(evt);
+            }
+        });
+        varEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varEmailActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 220, 30));
+
+        AdressSeparator.setToolTipText("");
+        fondoPrincipal.add(AdressSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 220, 10));
+
+        varAdress.setBackground(new java.awt.Color(255, 255, 255));
+        varAdress.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        varAdress.setForeground(new java.awt.Color(153, 153, 153));
+        varAdress.setText("Dirección");
+        varAdress.setBorder(null);
+        varAdress.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        varAdress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varAdressActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 220, 30));
 
         getContentPane().add(fondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -402,6 +461,71 @@ public class CheckIn extends javax.swing.JFrame {
     private void varLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varLastNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_varLastNameActionPerformed
+
+    private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitBtnActionPerformed
+
+    private void varPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varPhoneActionPerformed
+
+    private void varEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varEmailActionPerformed
+
+    private void varEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEmailMousePressed
+        // TODO add your handling code here:
+        if(varEmail.getText().equals("Email")) {
+            varEmail.setText("");
+            varEmail.setForeground(Color.black);
+        }
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("Nombre");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varName.getText().equals("Apellido")){
+            varName.setText("Apellido");
+            varName.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("Carrera");
+            varLastName.setForeground(Color.gray);
+        }
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("Equipo");
+            varPhone.setForeground(Color.gray);
+        }
+        
+    }//GEN-LAST:event_varEmailMousePressed
+
+    private void varAdressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varAdressActionPerformed
+        // TODO add your handling code here:
+        if(varAdress.getText().equals("Dirección")) {
+            varAdress.setText("");
+            varAdress.setForeground(Color.black);
+        }
+        if(varDocumento.getText().equals("Nombre")) {
+            varDocumento.setText("Nombre");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varName.getText().equals("Apellido")){
+            varName.setText("Apellido");
+            varName.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Carrera")){
+            varLastName.setText("Carrera");
+            varLastName.setForeground(Color.gray);
+        }
+        if(varPhone.getText().equals("Equipo")){
+            varPhone.setText("Equipo");
+            varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")) {
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varAdressActionPerformed
  
     /**
      * @param args the command line arguments
@@ -434,8 +558,12 @@ public class CheckIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSeparator AdressSeparator;
     private javax.swing.JSeparator CareerSeparator;
+    private javax.swing.JSeparator EmailSeparator;
+    private javax.swing.JButton ExitBtn;
     private javax.swing.JButton ExitButton;
+    private javax.swing.JLabel ExitText;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JLabel Image;
     private javax.swing.JPanel ImagePanel;
@@ -447,7 +575,9 @@ public class CheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel SingIn;
     private javax.swing.JSeparator TeamSoccerSeparator;
     private javax.swing.JPanel fondoPrincipal;
+    private javax.swing.JTextField varAdress;
     private javax.swing.JTextField varDocumento;
+    private javax.swing.JTextField varEmail;
     private javax.swing.JTextField varLastName;
     private javax.swing.JTextField varName;
     private javax.swing.JTextField varPhone;
