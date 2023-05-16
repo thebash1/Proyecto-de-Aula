@@ -4,12 +4,14 @@
  */
 package com.mycompany.proyectoaula;
 
+import java.awt.Color;
+
 /**
  *
  * @author daniel
  */
 public class Menu extends javax.swing.JFrame {
-
+    int xMouse, yMouse;
     /**
      * Creates new form Inicio
      */
@@ -26,39 +28,215 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        FirstPanel = new javax.swing.JPanel();
+        MainPanel = new javax.swing.JPanel();
+        MenuTittle = new javax.swing.JLabel();
+        HeaderPanel = new javax.swing.JPanel();
+        ExitButton = new javax.swing.JButton();
+        ToRegisterButton = new javax.swing.JButton();
+        ManageButton = new javax.swing.JButton();
+        ResultsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
-        FirstPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MainPanel.setPreferredSize(new java.awt.Dimension(800, 500));
+        MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout FirstPanelLayout = new javax.swing.GroupLayout(FirstPanel);
-        FirstPanel.setLayout(FirstPanelLayout);
-        FirstPanelLayout.setHorizontalGroup(
-            FirstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+        MenuTittle.setBackground(new java.awt.Color(0, 0, 0));
+        MenuTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        MenuTittle.setForeground(new java.awt.Color(0, 0, 0));
+        MenuTittle.setText("MENÚ");
+        MainPanel.add(MenuTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, 50));
+
+        HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
+        HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                HeaderPanelMouseDragged(evt);
+            }
+        });
+        HeaderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HeaderPanelMousePressed(evt);
+            }
+        });
+
+        ExitButton.setBackground(new java.awt.Color(255, 255, 255));
+        ExitButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        ExitButton.setForeground(new java.awt.Color(51, 51, 51));
+        ExitButton.setText("X");
+        ExitButton.setBorder(null);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExitButtonMouseExited(evt);
+            }
+        });
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HeaderPanelLayout = new javax.swing.GroupLayout(HeaderPanel);
+        HeaderPanel.setLayout(HeaderPanelLayout);
+        HeaderPanelLayout.setHorizontalGroup(
+            HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderPanelLayout.createSequentialGroup()
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 750, Short.MAX_VALUE))
         );
-        FirstPanelLayout.setVerticalGroup(
-            FirstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        HeaderPanelLayout.setVerticalGroup(
+            HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderPanelLayout.createSequentialGroup()
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
+
+        ToRegisterButton.setBackground(new java.awt.Color(0, 102, 0));
+        ToRegisterButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ToRegisterButton.setForeground(new java.awt.Color(0, 0, 0));
+        ToRegisterButton.setText("REGISTRAR PARTIDOS");
+        ToRegisterButton.setBorder(null);
+        ToRegisterButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ToRegisterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ToRegisterButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ToRegisterButtonMouseExited(evt);
+            }
+        });
+        ToRegisterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToRegisterButtonActionPerformed(evt);
+            }
+        });
+        MainPanel.add(ToRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 200, 50));
+
+        ManageButton.setBackground(new java.awt.Color(0, 102, 0));
+        ManageButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ManageButton.setForeground(new java.awt.Color(0, 0, 0));
+        ManageButton.setText("GESTIONAR EQUIPOS");
+        ManageButton.setBorder(null);
+        ManageButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ManageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ManageButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ManageButtonMouseExited(evt);
+            }
+        });
+        MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 200, 50));
+
+        ResultsButton.setBackground(new java.awt.Color(0, 102, 0));
+        ResultsButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ResultsButton.setForeground(new java.awt.Color(0, 0, 0));
+        ResultsButton.setText("VER RESULTADOS");
+        ResultsButton.setBorder(null);
+        ResultsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ResultsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ResultsButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ResultsButtonMouseExited(evt);
+            }
+        });
+        MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 200, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(FirstPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FirstPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void ExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonMouseClicked
+
+    private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
+        // TODO add your handling code here:
+        ExitButton.setBackground(Color.red);
+        ExitButton.setForeground(Color.white);
+    }//GEN-LAST:event_ExitButtonMouseEntered
+
+    private void ExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseExited
+        // TODO add your handling code here:
+        ExitButton.setBackground(Color.white);
+        ExitButton.setForeground(Color.black);
+    }//GEN-LAST:event_ExitButtonMouseExited
+
+    private void HeaderPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_HeaderPanelMouseDragged
+
+    private void HeaderPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderPanelMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_HeaderPanelMousePressed
+
+    private void ToRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToRegisterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToRegisterButtonActionPerformed
+
+    private void ToRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseEntered
+        // TODO add your handling code here:
+        ToRegisterButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_ToRegisterButtonMouseEntered
+
+    private void ToRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseExited
+        // TODO add your handling code here:
+        ToRegisterButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_ToRegisterButtonMouseExited
+
+    private void ManageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageButtonMouseExited
+        // TODO add your handling code here:
+        ManageButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_ManageButtonMouseExited
+
+    private void ManageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageButtonMouseEntered
+        // TODO add your handling code here:
+        ManageButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_ManageButtonMouseEntered
+
+    private void ResultsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsButtonMouseEntered
+        // TODO add your handling code here:
+        ResultsButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_ResultsButtonMouseEntered
+
+    private void ResultsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsButtonMouseExited
+        // TODO add your handling code here:
+        ResultsButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_ResultsButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -97,6 +275,12 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel FirstPanel;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton ManageButton;
+    private javax.swing.JLabel MenuTittle;
+    private javax.swing.JButton ResultsButton;
+    private javax.swing.JButton ToRegisterButton;
     // End of variables declaration//GEN-END:variables
 }

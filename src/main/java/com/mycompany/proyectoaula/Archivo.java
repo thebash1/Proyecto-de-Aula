@@ -3,22 +3,24 @@ package com.mycompany.proyectoaula;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Base {
+public class Archivo {
     File Archivo = new File("Datos.txt");
     
     public void EscrituraDatos(){
         try {
-        FileWriter EscribirDatos = new FileWriter(Archivo);
-        BufferedWriter TransferirEscritura = new BufferedWriter(EscribirDatos);
-        PrintWriter ImprimirDatos = new PrintWriter(TransferirEscritura);
-        ImprimirDatos.append("");
-        ImprimirDatos.close();
-        TransferirEscritura.close();
+            if(!Archivo.exists()){
+                Archivo.createNewFile();
+            }
+
+            FileWriter EscribirDatos = new FileWriter(Archivo);
+            try (BufferedWriter TransferirEscritura = new BufferedWriter(EscribirDatos); PrintWriter ImprimirDatos = new PrintWriter(TransferirEscritura)) {
+                ImprimirDatos.append("");
+            }
         
         } catch (IOException e) {
             System.out.println("Error");
         }
-    }
+    } //cierre de metodo escribir datos 
     
     public ArrayList<Object []> LecturaDatos() throws IOException{
         
@@ -37,6 +39,7 @@ public class Base {
         }
         
         return Lectura;
-    }
+        
+    } //cierre de metodo leer datos
     
 }
