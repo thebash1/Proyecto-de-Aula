@@ -31,8 +31,15 @@ public class GestionEquipos extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
         ExitButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        ListButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
+        ChangeButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,6 +90,44 @@ public class GestionEquipos extends javax.swing.JFrame {
 
         MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Gestión de Equipo");
+        MainPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 250, 50));
+
+        ListButton.setBackground(new java.awt.Color(0, 102, 0));
+        ListButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ListButton.setForeground(new java.awt.Color(0, 0, 0));
+        ListButton.setText("Listar equipos registrados");
+        ListButton.setBorder(null);
+        ListButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MainPanel.add(ListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, 50));
+
+        AddButton.setBackground(new java.awt.Color(0, 102, 0));
+        AddButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        AddButton.setForeground(new java.awt.Color(0, 0, 0));
+        AddButton.setText("Formulario para agregar ");
+        AddButton.setBorder(null);
+        AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MainPanel.add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 250, 50));
+
+        ChangeButton.setBackground(new java.awt.Color(0, 102, 0));
+        ChangeButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ChangeButton.setForeground(new java.awt.Color(0, 0, 0));
+        ChangeButton.setText("Formulario para modificar");
+        ChangeButton.setBorder(null);
+        ChangeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MainPanel.add(ChangeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 250, 50));
+
+        DeleteButton.setBackground(new java.awt.Color(0, 102, 0));
+        DeleteButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        DeleteButton.setForeground(new java.awt.Color(0, 0, 0));
+        DeleteButton.setText("Formulario para eliminar");
+        DeleteButton.setBorder(null);
+        DeleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MainPanel.add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 250, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,7 +136,7 @@ public class GestionEquipos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,8 +208,13 @@ public class GestionEquipos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddButton;
+    private javax.swing.JButton ChangeButton;
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
+    private javax.swing.JButton ListButton;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
