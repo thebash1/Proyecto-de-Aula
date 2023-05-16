@@ -17,7 +17,7 @@ public class CheckIn extends javax.swing.JFrame {
      */
     
     int xMouse,
-
+    
     /**
      * Creates new form CheckIn
      */
@@ -53,8 +53,8 @@ public class CheckIn extends javax.swing.JFrame {
         TeamSoccerSeparator = new javax.swing.JSeparator();
         LoginText = new javax.swing.JLabel();
         LoginButton = new javax.swing.JButton();
-        ExitText = new javax.swing.JLabel();
-        ExitBtn = new javax.swing.JButton();
+        BackText = new javax.swing.JLabel();
+        BackButton = new javax.swing.JButton();
         EmailSeparator = new javax.swing.JSeparator();
         varEmail = new javax.swing.JTextField();
         AdressSeparator = new javax.swing.JSeparator();
@@ -98,13 +98,13 @@ public class CheckIn extends javax.swing.JFrame {
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
         SingIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SingIn.setText("REGISTRARSE");
-        fondoPrincipal.add(SingIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 220, 50));
+        fondoPrincipal.add(SingIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 220, 50));
 
         LogoUPC.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         LogoUPC.setForeground(new java.awt.Color(0, 0, 0));
         LogoUPC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LogoUPC.setText("LOGO UPC");
-        fondoPrincipal.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 250, 50));
+        fondoPrincipal.add(LogoUPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 250, 50));
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
         HeaderPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -173,7 +173,12 @@ public class CheckIn extends javax.swing.JFrame {
                 varDocumentoMousePressed(evt);
             }
         });
-        fondoPrincipal.add(varDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 220, 30));
+        varDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varDocumentoActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 220, 30));
 
         varName.setBackground(new java.awt.Color(255, 255, 255));
         varName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -188,7 +193,12 @@ public class CheckIn extends javax.swing.JFrame {
                 varNameMousePressed(evt);
             }
         });
-        fondoPrincipal.add(varName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 220, 30));
+        varName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varNameActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(varName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 220, 30));
 
         varLastName.setBackground(new java.awt.Color(255, 255, 255));
         varLastName.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -205,7 +215,7 @@ public class CheckIn extends javax.swing.JFrame {
                 varLastNameActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(varLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 220, 30));
+        fondoPrincipal.add(varLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, 30));
 
         varPhone.setBackground(new java.awt.Color(255, 255, 255));
         varPhone.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -222,11 +232,11 @@ public class CheckIn extends javax.swing.JFrame {
                 varPhoneActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(varPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 220, 30));
-        fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 203, 220, 10));
-        fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 220, 10));
-        fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 10));
-        fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 220, 10));
+        fondoPrincipal.add(varPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 220, 30));
+        fondoPrincipal.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 220, 10));
+        fondoPrincipal.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 10));
+        fondoPrincipal.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 10));
+        fondoPrincipal.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 220, 10));
 
         LoginText.setBackground(new java.awt.Color(255, 255, 255));
         LoginText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -260,20 +270,32 @@ public class CheckIn extends javax.swing.JFrame {
         });
         fondoPrincipal.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 120, 35));
 
-        ExitText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        ExitText.setForeground(new java.awt.Color(0, 0, 0));
-        ExitText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ExitText.setText("REGRESAR");
-        fondoPrincipal.add(ExitText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+        BackText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        BackText.setForeground(new java.awt.Color(0, 0, 0));
+        BackText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BackText.setText("REGRESAR");
+        BackText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fondoPrincipal.add(BackText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
 
-        ExitBtn.setBackground(new java.awt.Color(0, 102, 0));
-        ExitBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitBtnActionPerformed(evt);
+        BackButton.setBackground(new java.awt.Color(0, 102, 0));
+        BackButton.setFont(new java.awt.Font("Roboto Black", 0, 16)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(0, 0, 0));
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackButtonMouseExited(evt);
             }
         });
-        fondoPrincipal.add(ExitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
-        fondoPrincipal.add(EmailSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 220, 10));
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+        fondoPrincipal.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
+        fondoPrincipal.add(EmailSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 220, 10));
 
         varEmail.setBackground(new java.awt.Color(255, 255, 255));
         varEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -290,10 +312,10 @@ public class CheckIn extends javax.swing.JFrame {
                 varEmailActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(varEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 220, 30));
+        fondoPrincipal.add(varEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 220, 30));
 
         AdressSeparator.setToolTipText("");
-        fondoPrincipal.add(AdressSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 220, 10));
+        fondoPrincipal.add(AdressSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 220, 10));
 
         varAdress.setBackground(new java.awt.Color(255, 255, 255));
         varAdress.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -306,7 +328,7 @@ public class CheckIn extends javax.swing.JFrame {
                 varAdressActionPerformed(evt);
             }
         });
-        fondoPrincipal.add(varAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 220, 30));
+        fondoPrincipal.add(varAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 220, 30));
 
         getContentPane().add(fondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -365,7 +387,7 @@ public class CheckIn extends javax.swing.JFrame {
 
     private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
         // TODO add your handling code here:
-        LoginButton.setForeground(new Color(102, 102, 102));
+        LoginButton.setForeground(new Color(0, 102, 0));
     }//GEN-LAST:event_LoginButtonMouseExited
 
     private void varDocumentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varDocumentoMousePressed
@@ -462,9 +484,9 @@ public class CheckIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_varLastNameActionPerformed
 
-    private void ExitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBtnActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ExitBtnActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     private void varPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varPhoneActionPerformed
         // TODO add your handling code here:
@@ -526,6 +548,24 @@ public class CheckIn extends javax.swing.JFrame {
             varEmail.setForeground(Color.gray);
         }
     }//GEN-LAST:event_varAdressActionPerformed
+
+    private void BackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseEntered
+        // TODO add your handling code here:
+        BackButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_BackButtonMouseEntered
+
+    private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
+        // TODO add your handling code here:
+        BackButton.setForeground(new Color(0, 102, 0));
+    }//GEN-LAST:event_BackButtonMouseExited
+
+    private void varNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varNameActionPerformed
+
+    private void varDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varDocumentoActionPerformed
  
     /**
      * @param args the command line arguments
@@ -559,11 +599,11 @@ public class CheckIn extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator AdressSeparator;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JLabel BackText;
     private javax.swing.JSeparator CareerSeparator;
     private javax.swing.JSeparator EmailSeparator;
-    private javax.swing.JButton ExitBtn;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JLabel ExitText;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JLabel Image;
     private javax.swing.JPanel ImagePanel;
