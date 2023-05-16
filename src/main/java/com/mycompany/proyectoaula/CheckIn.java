@@ -169,6 +169,12 @@ public class CheckIn extends javax.swing.JFrame {
         varDocumento.setText("Documento");
         varDocumento.setBorder(null);
         varDocumento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                varDocumentoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varDocumentoMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 varDocumentoMousePressed(evt);
             }
@@ -189,6 +195,9 @@ public class CheckIn extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 varNameMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varNameMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 varNameMousePressed(evt);
             }
@@ -206,6 +215,9 @@ public class CheckIn extends javax.swing.JFrame {
         varLastName.setText("Apellido");
         varLastName.setBorder(null);
         varLastName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varLastNameMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 varLastNameMousePressed(evt);
             }
@@ -223,6 +235,9 @@ public class CheckIn extends javax.swing.JFrame {
         varPhone.setText("Telefono");
         varPhone.setBorder(null);
         varPhone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varPhoneMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 varPhoneMousePressed(evt);
             }
@@ -303,6 +318,9 @@ public class CheckIn extends javax.swing.JFrame {
         varEmail.setText("Correo");
         varEmail.setBorder(null);
         varEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varEmailMouseExited(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 varEmailMousePressed(evt);
             }
@@ -323,6 +341,14 @@ public class CheckIn extends javax.swing.JFrame {
         varAdress.setText("Dirección");
         varAdress.setBorder(null);
         varAdress.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        varAdress.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                varAdressMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                varAdressMousePressed(evt);
+            }
+        });
         varAdress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 varAdressActionPerformed(evt);
@@ -387,26 +413,34 @@ public class CheckIn extends javax.swing.JFrame {
 
     private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
         // TODO add your handling code here:
-        LoginButton.setForeground(new Color(0, 102, 0));
+        LoginButton.setBackground(new Color(0, 102, 0));
     }//GEN-LAST:event_LoginButtonMouseExited
 
     private void varDocumentoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varDocumentoMousePressed
         // TODO add your handling code here:
-        if(varDocumento.getText().equals("Nombre")) {
+        if(varName.getText().equals("Nombre")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+        if(varDocumento.getText().equals("Documento")) {
             varDocumento.setText("");
             varDocumento.setForeground(Color.black);
         }
-        if(varName.getText().equals("Apellido")){
-            varName.setText("Apellido");
-            varName.setForeground(Color.gray);
-        }
-        if(varLastName.getText().equals("Carrera")){
-            varLastName.setText("Carrera");
+        if(varLastName.getText().equals("Apellido")){
+            varLastName.setText("Apellido");
             varLastName.setForeground(Color.gray);
         }
-        if(varPhone.getText().equals("Equipo")){
-            varPhone.setText("Equipo");
+        if(varPhone.getText().equals("Telefono")){
+            varPhone.setText("Telefono");
             varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
         }
     }//GEN-LAST:event_varDocumentoMousePressed
 
@@ -416,67 +450,91 @@ public class CheckIn extends javax.swing.JFrame {
 
     private void varNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varNameMousePressed
         // TODO add your handling code here:
-        if(varName.getText().equals("Apellido")){
+        if(varName.getText().equals("Nombre")){
             varName.setText("");
             varName.setForeground(Color.black);
         }
-        if(varDocumento.getText().equals("Nombre")) {
-            varDocumento.setText("Nombre");
+        if(varDocumento.getText().equals("Documento")) {
+            varDocumento.setText("Documento");
             varDocumento.setForeground(Color.gray);
         }
-        if(varLastName.getText().equals("Carrera")){
-            varLastName.setText("Carrera");
+        if(varLastName.getText().equals("Apellido")){
+            varLastName.setText("Apellido");
             varLastName.setForeground(Color.gray);
         }
-        if(varPhone.getText().equals("Equipo")){
-            varPhone.setText("Equipo");
+        if(varPhone.getText().equals("Telefono")){
+            varPhone.setText("Telefono");
             varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
         }
     }//GEN-LAST:event_varNameMousePressed
 
     private void varLastNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varLastNameMousePressed
         // TODO add your handling code here:
-        if(varLastName.getText().equals("Carrera")){
+        if(varName.getText().equals("Nombre")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+        if(varDocumento.getText().equals("Documento")) {
+            varDocumento.setText("Documento");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Apellido")){
             varLastName.setText("");
             varLastName.setForeground(Color.black);
         }
-        if(varDocumento.getText().equals("Nombre")) {
-            varDocumento.setText("Nombre");
-            varDocumento.setForeground(Color.gray);
-        }
-        if(varName.getText().equals("Apellido")){
-            varName.setText("Apellido");
-            varName.setForeground(Color.gray);
-        }
-        if(varPhone.getText().equals("Equipo")){
-            varPhone.setText("Equipo");
+        if(varPhone.getText().equals("Telefono")){
+            varPhone.setText("Telefono");
             varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
         }
     }//GEN-LAST:event_varLastNameMousePressed
 
     private void varPhoneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varPhoneMousePressed
         // TODO add your handling code here:
-        if(varPhone.getText().equals("Equipo")){
+        if(varName.getText().equals("Nombre")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+        if(varDocumento.getText().equals("Documento")) {
+            varDocumento.setText("Documento");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Apellido")){
+            varLastName.setText("Apellido");
+            varLastName.setForeground(Color.gray);
+        }
+        if(varPhone.getText().equals("Telefono")){
             varPhone.setText("");
             varPhone.setForeground(Color.black);
         }
-        if(varDocumento.getText().equals("Nombre")) {
-            varDocumento.setText("Nombre");
-            varDocumento.setForeground(Color.gray);
+        if(varEmail.getText().equals("Correo")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
         }
-        if(varName.getText().equals("Apellido")){
-            varName.setText("Apellido");
-            varName.setForeground(Color.gray);
-        }
-        if(varLastName.getText().equals("Carrera")){
-            varLastName.setText("Carrera");
-            varLastName.setForeground(Color.gray);
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
         }
     }//GEN-LAST:event_varPhoneMousePressed
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
-        javax.swing.JOptionPane.showMessageDialog(this, "¡Usuario "+varDocumento.getText()+" registrado correctamente!");
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Usuario "+varName.getText()+" "+varLastName.getText()+" registrado correctamente!");
         
     }//GEN-LAST:event_LoginButtonMouseClicked
 
@@ -498,25 +556,29 @@ public class CheckIn extends javax.swing.JFrame {
 
     private void varEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEmailMousePressed
         // TODO add your handling code here:
-        if(varEmail.getText().equals("Email")) {
+        if(varName.getText().equals("Nombre")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+        if(varDocumento.getText().equals("Documento")) {
+            varDocumento.setText("Documento");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Apellido")){
+            varLastName.setText("Apellido");
+            varLastName.setForeground(Color.gray);
+        }
+        if(varPhone.getText().equals("Telefono")){
+            varPhone.setText("Telefono");
+            varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")){
             varEmail.setText("");
             varEmail.setForeground(Color.black);
         }
-        if(varDocumento.getText().equals("Nombre")) {
-            varDocumento.setText("Nombre");
-            varDocumento.setForeground(Color.gray);
-        }
-        if(varName.getText().equals("Apellido")){
-            varName.setText("Apellido");
-            varName.setForeground(Color.gray);
-        }
-        if(varLastName.getText().equals("Carrera")){
-            varLastName.setText("Carrera");
-            varLastName.setForeground(Color.gray);
-        }
-        if(varPhone.getText().equals("Equipo")){
-            varPhone.setText("Equipo");
-            varPhone.setForeground(Color.gray);
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
         }
         
     }//GEN-LAST:event_varEmailMousePressed
@@ -556,7 +618,7 @@ public class CheckIn extends javax.swing.JFrame {
 
     private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
         // TODO add your handling code here:
-        BackButton.setForeground(new Color(0, 102, 0));
+        BackButton.setBackground(new Color(0, 102, 0));
     }//GEN-LAST:event_BackButtonMouseExited
 
     private void varNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varNameActionPerformed
@@ -566,6 +628,86 @@ public class CheckIn extends javax.swing.JFrame {
     private void varDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varDocumentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_varDocumentoActionPerformed
+
+    private void varDocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varDocumentoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varDocumentoMouseClicked
+
+    private void varAdressMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varAdressMousePressed
+        // TODO add your handling code here:
+        if(varName.getText().equals("Nombre")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+        if(varDocumento.getText().equals("Documento")) {
+            varDocumento.setText("Documento");
+            varDocumento.setForeground(Color.gray);
+        }
+        if(varLastName.getText().equals("Apellido")){
+            varLastName.setText("Apellido");
+            varLastName.setForeground(Color.gray);
+        }
+        if(varPhone.getText().equals("Telefono")){
+            varPhone.setText("Telefono");
+            varPhone.setForeground(Color.gray);
+        }
+        if(varEmail.getText().equals("Correo")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+        if(varAdress.getText().equals("Dirección")){
+            varAdress.setText("");
+            varAdress.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_varAdressMousePressed
+
+    private void varDocumentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varDocumentoMouseExited
+        // TODO add your handling code here:
+        if(varDocumento.getText().equals("")){
+            varDocumento.setText("Documento");
+            varDocumento.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varDocumentoMouseExited
+
+    private void varNameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varNameMouseExited
+        // TODO add your handling code here:
+        if(varName.getText().equals("")){
+            varName.setText("Nombre");
+            varName.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varNameMouseExited
+
+    private void varLastNameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varLastNameMouseExited
+        // TODO add your handling code here:
+        if(varLastName.getText().equals("")){
+            varLastName.setText("Apellido");
+            varLastName.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varLastNameMouseExited
+
+    private void varPhoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varPhoneMouseExited
+        // TODO add your handling code here:
+        if(varPhone.getText().equals("")){
+            varPhone.setText("Telefono");
+            varPhone.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varPhoneMouseExited
+
+    private void varEmailMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEmailMouseExited
+        // TODO add your handling code here:
+        if(varEmail.getText().equals("")){
+            varEmail.setText("Correo");
+            varEmail.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varEmailMouseExited
+
+    private void varAdressMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varAdressMouseExited
+        // TODO add your handling code here:
+        if(varAdress.getText().equals("")){
+            varAdress.setText("Dirección");
+            varAdress.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_varAdressMouseExited
  
     /**
      * @param args the command line arguments
