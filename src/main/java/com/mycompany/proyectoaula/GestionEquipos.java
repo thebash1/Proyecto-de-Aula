@@ -28,20 +28,26 @@ public class GestionEquipos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GestionEquipoTittle = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
         ExitButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         ListButton = new javax.swing.JButton();
         AddButton = new javax.swing.JButton();
         ChangeButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
+
+        GestionEquipoTittle.setBackground(new java.awt.Color(255, 255, 255));
+        GestionEquipoTittle.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        GestionEquipoTittle.setForeground(new java.awt.Color(0, 0, 0));
+        GestionEquipoTittle.setText("Gestión de Equipo");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MainPanel.setMinimumSize(new java.awt.Dimension(800, 500));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -61,6 +67,7 @@ public class GestionEquipos extends javax.swing.JFrame {
         ExitButton.setForeground(new java.awt.Color(51, 51, 51));
         ExitButton.setText("X");
         ExitButton.setBorder(null);
+        ExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ExitButtonMouseClicked(evt);
@@ -90,18 +97,20 @@ public class GestionEquipos extends javax.swing.JFrame {
 
         MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Gestión de Equipo");
-        MainPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 250, 50));
-
         ListButton.setBackground(new java.awt.Color(0, 102, 0));
         ListButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         ListButton.setForeground(new java.awt.Color(0, 0, 0));
         ListButton.setText("Listar equipos registrados");
         ListButton.setBorder(null);
         ListButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ListButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ListButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ListButtonMouseExited(evt);
+            }
+        });
         MainPanel.add(ListButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, 50));
 
         AddButton.setBackground(new java.awt.Color(0, 102, 0));
@@ -110,6 +119,14 @@ public class GestionEquipos extends javax.swing.JFrame {
         AddButton.setText("Formulario para agregar ");
         AddButton.setBorder(null);
         AddButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AddButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AddButtonMouseExited(evt);
+            }
+        });
         MainPanel.add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 250, 50));
 
         ChangeButton.setBackground(new java.awt.Color(0, 102, 0));
@@ -118,6 +135,14 @@ public class GestionEquipos extends javax.swing.JFrame {
         ChangeButton.setText("Formulario para modificar");
         ChangeButton.setBorder(null);
         ChangeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ChangeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ChangeButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ChangeButtonMouseExited(evt);
+            }
+        });
         MainPanel.add(ChangeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 250, 50));
 
         DeleteButton.setBackground(new java.awt.Color(0, 102, 0));
@@ -126,6 +151,14 @@ public class GestionEquipos extends javax.swing.JFrame {
         DeleteButton.setText("Formulario para eliminar");
         DeleteButton.setBorder(null);
         DeleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DeleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DeleteButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeleteButtonMouseExited(evt);
+            }
+        });
         MainPanel.add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 250, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,6 +206,46 @@ public class GestionEquipos extends javax.swing.JFrame {
         ExitButton.setForeground(Color.black);
     }//GEN-LAST:event_ExitButtonMouseExited
 
+    private void ListButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListButtonMouseEntered
+        // TODO add your handling code here:
+        ListButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_ListButtonMouseEntered
+
+    private void ListButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListButtonMouseExited
+        // TODO add your handling code here:
+        ListButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_ListButtonMouseExited
+
+    private void AddButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddButtonMouseEntered
+        // TODO add your handling code here:
+        AddButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_AddButtonMouseEntered
+
+    private void AddButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddButtonMouseExited
+        // TODO add your handling code here:
+        AddButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_AddButtonMouseExited
+
+    private void ChangeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangeButtonMouseEntered
+        // TODO add your handling code here:
+        ChangeButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_ChangeButtonMouseEntered
+
+    private void ChangeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChangeButtonMouseExited
+        // TODO add your handling code here:
+        ChangeButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_ChangeButtonMouseExited
+
+    private void DeleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButtonMouseEntered
+        // TODO add your handling code here:
+        DeleteButton.setBackground(new Color(0, 153, 0));
+    }//GEN-LAST:event_DeleteButtonMouseEntered
+
+    private void DeleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteButtonMouseExited
+        // TODO add your handling code here:
+        DeleteButton.setBackground(new Color(0, 102, 0));
+    }//GEN-LAST:event_DeleteButtonMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -212,9 +285,9 @@ public class GestionEquipos extends javax.swing.JFrame {
     private javax.swing.JButton ChangeButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton ExitButton;
+    private javax.swing.JLabel GestionEquipoTittle;
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton ListButton;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
