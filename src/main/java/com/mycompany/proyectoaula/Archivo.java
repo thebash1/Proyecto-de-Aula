@@ -6,15 +6,15 @@ import java.util.ArrayList;
 public class Archivo {
     File Archivo = new File("Datos.txt");
     
-    public void EscrituraDatos(){
+    public void EscrituraDatos(String fila){
         try {
             if(!Archivo.exists()){
                 Archivo.createNewFile();
             }
 
-            FileWriter EscribirDatos = new FileWriter(Archivo);
+            FileWriter EscribirDatos = new FileWriter(Archivo, true);
             try (BufferedWriter TransferirEscritura = new BufferedWriter(EscribirDatos); PrintWriter ImprimirDatos = new PrintWriter(TransferirEscritura)) {
-                ImprimirDatos.append("");
+                ImprimirDatos.append(fila);
             }
         
         } catch (IOException e) {
@@ -41,5 +41,43 @@ public class Archivo {
         return Lectura;
         
     } //cierre de metodo leer datos
+
+    
+    public void EliminarCliente(String documento) throws IOException{
+        ArrayList<Object []> DatosArchivo = this.LecturaDatos();
+        this.EliminarArchivo();
+        for (Object[] cliente : DatosArchivo) {
+            if(!String.valueOf(cliente[0]).equals(documento)){
+                String linea = String.valueOf(cliente[0])+";"+String.valueOf(cliente[1])+";"+String.valueOf(cliente[2])+";"+String.valueOf(cliente[3])+";"+String.valueOf(cliente[4])+";"+String.valueOf(cliente[5])+"\n";
+                this.EscrituraDatos(linea);
+            }
+            
+        }
+    }
+    
+    public void EliminarArchivo(){
+        try {
+            if(!Archivo.exists()){
+                Archivo.createNewFile();
+            }
+            FileWriter EscribirDatos = new FileWriter(Archivo); 
+            PrintWriter ImprimirDatos;
+            try (BufferedWriter TransferirEscritura = new BufferedWriter(EscribirDatos)) {
+                ImprimirDatos = new PrintWriter(TransferirEscritura);
+            }
+            ImprimirDatos.close();
+                       
+        } catch (IOException e) {
+        }
+    }
+    
+    
+    public void ActualizarDatos(String documento){
+        
+        
+        
+    }
+    
+    
     
 }
