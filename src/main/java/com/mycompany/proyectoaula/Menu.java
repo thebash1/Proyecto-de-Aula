@@ -17,6 +17,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -138,7 +139,12 @@ public class Menu extends javax.swing.JFrame {
                 ManageButtonMouseExited(evt);
             }
         });
-        MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 200, 50));
+        ManageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManageButtonActionPerformed(evt);
+            }
+        });
+        MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 200, 50));
 
         ResultsButton.setBackground(new java.awt.Color(0, 102, 0));
         ResultsButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -154,7 +160,12 @@ public class Menu extends javax.swing.JFrame {
                 ResultsButtonMouseExited(evt);
             }
         });
-        MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 200, 50));
+        ResultsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultsButtonActionPerformed(evt);
+            }
+        });
+        MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 200, 50));
 
         LogoLabel.setBackground(new java.awt.Color(255, 255, 255));
         LogoLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -213,6 +224,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void ToRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToRegisterButtonActionPerformed
         // TODO add your handling code here:
+        RegistrarPartido partido1 = new RegistrarPartido();
+        partido1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ToRegisterButtonActionPerformed
 
     private void ToRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseEntered
@@ -244,6 +258,20 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultsButton.setBackground(new Color(0, 102, 0));
     }//GEN-LAST:event_ResultsButtonMouseExited
+
+    private void ManageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageButtonActionPerformed
+        // TODO add your handling code here:
+        GestionEquipos equipo1 = new GestionEquipos();
+        equipo1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ManageButtonActionPerformed
+
+    private void ResultsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultsButtonActionPerformed
+        // TODO add your handling code here:
+        VerResultados resultado1 = new VerResultados();
+        resultado1.setVisible(true);
+        dispose();     
+    }//GEN-LAST:event_ResultsButtonActionPerformed
 
     /**
      * @param args the command line arguments

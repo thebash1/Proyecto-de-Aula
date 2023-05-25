@@ -29,6 +29,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
     
     public RegistrarPartido() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -41,8 +42,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        ImagePanel = new javax.swing.JPanel();
-        Image = new javax.swing.JLabel();
         SingIn = new javax.swing.JLabel();
         LogoUPC = new javax.swing.JLabel();
         HeaderPanel = new javax.swing.JPanel();
@@ -55,9 +54,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
         LastNameSeparator = new javax.swing.JSeparator();
         CareerSeparator = new javax.swing.JSeparator();
         TeamSoccerSeparator = new javax.swing.JSeparator();
-        LoginText = new javax.swing.JLabel();
         LoginButton = new javax.swing.JButton();
-        BackText = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
         EmailSeparator = new javax.swing.JSeparator();
         varGolesEquipoVisitante = new javax.swing.JTextField();
@@ -70,31 +67,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ImagePanel.setBackground(new java.awt.Color(0, 102, 0));
-
-        Image.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        Image.setForeground(new java.awt.Color(0, 0, 0));
-        Image.setText("Diseño");
-
-        javax.swing.GroupLayout ImagePanelLayout = new javax.swing.GroupLayout(ImagePanel);
-        ImagePanel.setLayout(ImagePanelLayout);
-        ImagePanelLayout.setHorizontalGroup(
-            ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ImagePanelLayout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(Image)
-                .addGap(94, 94, 94))
-        );
-        ImagePanelLayout.setVerticalGroup(
-            ImagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ImagePanelLayout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addComponent(Image)
-                .addContainerGap(262, Short.MAX_VALUE))
-        );
-
-        MainPanel.add(ImagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 250, 500));
 
         SingIn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
@@ -154,7 +126,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
             HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderPanelLayout.createSequentialGroup()
                 .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 750, Short.MAX_VALUE))
+                .addGap(0, 600, Short.MAX_VALUE))
         );
         HeaderPanelLayout.setVerticalGroup(
             HeaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +135,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
                 .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
+        MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 50));
 
         varFecha.setBackground(new java.awt.Color(255, 255, 255));
         varFecha.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -255,17 +227,10 @@ public class RegistrarPartido extends javax.swing.JFrame {
         MainPanel.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 10));
         MainPanel.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 220, 10));
 
-        LoginText.setBackground(new java.awt.Color(255, 255, 255));
-        LoginText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        LoginText.setForeground(new java.awt.Color(0, 0, 0));
-        LoginText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LoginText.setText("GUARDAR PARTIDO");
-        LoginText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        MainPanel.add(LoginText, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 220, 35));
-
         LoginButton.setBackground(new java.awt.Color(0, 102, 0));
-        LoginButton.setFont(new java.awt.Font("Roboto Black", 0, 16)); // NOI18N
+        LoginButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         LoginButton.setForeground(new java.awt.Color(0, 0, 0));
+        LoginButton.setText("GUARDAR PARTIDO");
         LoginButton.setBorder(null);
         LoginButton.setBorderPainted(false);
         LoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -287,16 +252,10 @@ public class RegistrarPartido extends javax.swing.JFrame {
         });
         MainPanel.add(LoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 220, 35));
 
-        BackText.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        BackText.setForeground(new java.awt.Color(0, 0, 0));
-        BackText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackText.setText("REGRESAR");
-        BackText.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        MainPanel.add(BackText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 120, 35));
-
         BackButton.setBackground(new java.awt.Color(0, 102, 0));
-        BackButton.setFont(new java.awt.Font("Roboto Black", 0, 16)); // NOI18N
+        BackButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         BackButton.setForeground(new java.awt.Color(0, 0, 0));
+        BackButton.setText("REGRESAR");
         BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -334,7 +293,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
         });
         MainPanel.add(varGolesEquipoVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 220, 30));
 
-        getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -494,6 +453,9 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         // TODO add your handling code here:
+        Menu regresar = new Menu();
+        regresar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void varEquipoVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varEquipoVisitanteActionPerformed
@@ -622,16 +584,12 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
-    private javax.swing.JLabel BackText;
     private javax.swing.JSeparator CareerSeparator;
     private javax.swing.JSeparator EmailSeparator;
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
-    private javax.swing.JLabel Image;
-    private javax.swing.JPanel ImagePanel;
     private javax.swing.JSeparator LastNameSeparator;
     private javax.swing.JButton LoginButton;
-    private javax.swing.JLabel LoginText;
     private javax.swing.JLabel LogoUPC;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JSeparator NameSeparator;
