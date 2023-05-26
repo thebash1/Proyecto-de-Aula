@@ -340,6 +340,11 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
+        Menu regresar = new Menu();
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Partido de la fecha "+varFecha.getText()+" registrado correctamente!");
+
+        regresar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
@@ -443,8 +448,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
-        javax.swing.JOptionPane.showMessageDialog(this, "¡Partido de la fecha "+varFecha.getText()+" registrado correctamente!");
-        
     }//GEN-LAST:event_LoginButtonMouseClicked
 
     private void varGolesEquipoLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varGolesEquipoLocalActionPerformed
