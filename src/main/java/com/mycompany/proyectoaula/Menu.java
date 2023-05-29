@@ -32,19 +32,17 @@ public class Menu extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         HeaderPanel = new javax.swing.JPanel();
         ExitButton = new javax.swing.JButton();
+        MenuTittle = new javax.swing.JLabel();
         ToRegisterButton = new javax.swing.JButton();
         ManageButton = new javax.swing.JButton();
         ResultsButton = new javax.swing.JButton();
-        LogoLabel = new javax.swing.JLabel();
-        backgroundMenu = new javax.swing.JPanel();
-        MenuTittle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
-        MainPanel.setPreferredSize(new java.awt.Dimension(800, 500));
+        MainPanel.setPreferredSize(new java.awt.Dimension(500, 500));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,7 +97,13 @@ public class Menu extends javax.swing.JFrame {
 
         MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
-        ToRegisterButton.setBackground(new java.awt.Color(0, 102, 0));
+        MenuTittle.setBackground(new java.awt.Color(0, 0, 0));
+        MenuTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        MenuTittle.setForeground(new java.awt.Color(0, 0, 0));
+        MenuTittle.setText("MENÚ");
+        MainPanel.add(MenuTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 120, 50));
+
+        ToRegisterButton.setBackground(new java.awt.Color(0, 153, 204));
         ToRegisterButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         ToRegisterButton.setForeground(new java.awt.Color(0, 0, 0));
         ToRegisterButton.setText("REGISTRAR PARTIDOS");
@@ -120,9 +124,9 @@ public class Menu extends javax.swing.JFrame {
         });
         MainPanel.add(ToRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 200, 50));
 
-        ManageButton.setBackground(new java.awt.Color(0, 102, 0));
+        ManageButton.setBackground(new java.awt.Color(51, 51, 51));
         ManageButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        ManageButton.setForeground(new java.awt.Color(0, 0, 0));
+        ManageButton.setForeground(new java.awt.Color(255, 255, 255));
         ManageButton.setText("GESTIONAR EQUIPOS");
         ManageButton.setBorder(null);
         ManageButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -141,9 +145,9 @@ public class Menu extends javax.swing.JFrame {
         });
         MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 200, 50));
 
-        ResultsButton.setBackground(new java.awt.Color(0, 102, 0));
+        ResultsButton.setBackground(new java.awt.Color(51, 51, 51));
         ResultsButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        ResultsButton.setForeground(new java.awt.Color(0, 0, 0));
+        ResultsButton.setForeground(new java.awt.Color(255, 255, 255));
         ResultsButton.setText("VER RESULTADOS");
         ResultsButton.setBorder(null);
         ResultsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -162,47 +166,15 @@ public class Menu extends javax.swing.JFrame {
         });
         MainPanel.add(ResultsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 200, 50));
 
-        LogoLabel.setBackground(new java.awt.Color(255, 255, 255));
-        LogoLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        LogoLabel.setForeground(new java.awt.Color(0, 0, 0));
-        LogoLabel.setText("LOGO UPC");
-        MainPanel.add(LogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 160, 50));
-
-        backgroundMenu.setBackground(new java.awt.Color(153, 153, 153));
-        backgroundMenu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        backgroundMenu.setForeground(new java.awt.Color(255, 255, 255));
-
-        MenuTittle.setBackground(new java.awt.Color(0, 0, 0));
-        MenuTittle.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        MenuTittle.setForeground(new java.awt.Color(0, 0, 0));
-        MenuTittle.setText("MENÚ");
-
-        javax.swing.GroupLayout backgroundMenuLayout = new javax.swing.GroupLayout(backgroundMenu);
-        backgroundMenu.setLayout(backgroundMenuLayout);
-        backgroundMenuLayout.setHorizontalGroup(
-            backgroundMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundMenuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(MenuTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        backgroundMenuLayout.setVerticalGroup(
-            backgroundMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundMenuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(MenuTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        MainPanel.add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 120, 50));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -252,12 +224,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void ToRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseEntered
         // TODO add your handling code here:
-        ToRegisterButton.setBackground(new Color(0, 153, 0));
+        ToRegisterButton.setBackground(new Color(0, 51, 204));
     }//GEN-LAST:event_ToRegisterButtonMouseEntered
 
     private void ToRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseExited
         // TODO add your handling code here:
-        ToRegisterButton.setBackground(new Color(0, 102, 0));
+        ToRegisterButton.setBackground(new Color(0, 153, 204));
     }//GEN-LAST:event_ToRegisterButtonMouseExited
 
     private void ManageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageButtonMouseExited
@@ -333,12 +305,10 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
-    private javax.swing.JLabel LogoLabel;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton ManageButton;
     private javax.swing.JLabel MenuTittle;
     private javax.swing.JButton ResultsButton;
     private javax.swing.JButton ToRegisterButton;
-    private javax.swing.JPanel backgroundMenu;
     // End of variables declaration//GEN-END:variables
 }

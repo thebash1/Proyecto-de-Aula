@@ -68,6 +68,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        SingIn.setBackground(new java.awt.Color(255, 255, 255));
         SingIn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         SingIn.setForeground(new java.awt.Color(0, 0, 0));
         SingIn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);

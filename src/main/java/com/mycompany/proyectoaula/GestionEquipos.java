@@ -37,6 +37,7 @@ public class GestionEquipos extends javax.swing.JFrame {
         AddButton = new javax.swing.JButton();
         ChangeButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         GestionEquipoTittle.setBackground(new java.awt.Color(255, 255, 255));
         GestionEquipoTittle.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -162,15 +163,21 @@ public class GestionEquipos extends javax.swing.JFrame {
         });
         MainPanel.add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 250, 50));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("GESTIONAR EQUIPOS");
+        MainPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 250, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -290,5 +297,6 @@ public class GestionEquipos extends javax.swing.JFrame {
     private javax.swing.JPanel HeaderPanel;
     private javax.swing.JButton ListButton;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
