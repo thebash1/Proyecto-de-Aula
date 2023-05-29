@@ -5,6 +5,7 @@
 package com.mycompany.proyectoaula;
 
 import java.awt.Color;
+import javax.swing.JTextField;
 
 /**
  *
@@ -46,11 +47,9 @@ public class RegistrarPartido extends javax.swing.JFrame {
         LogoUPC = new javax.swing.JLabel();
         HeaderPanel = new javax.swing.JPanel();
         ExitButton = new javax.swing.JButton();
-        varFecha = new javax.swing.JTextField();
         varEquipoLocal = new javax.swing.JTextField();
         varGolesEquipoLocal = new javax.swing.JTextField();
         varEquipoVisitante = new javax.swing.JTextField();
-        NameSeparator = new javax.swing.JSeparator();
         LastNameSeparator = new javax.swing.JSeparator();
         CareerSeparator = new javax.swing.JSeparator();
         TeamSoccerSeparator = new javax.swing.JSeparator();
@@ -58,6 +57,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
         BackButton = new javax.swing.JButton();
         EmailSeparator = new javax.swing.JSeparator();
         varGolesEquipoVisitante = new javax.swing.JTextField();
+        DateChooser = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -138,29 +138,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
         MainPanel.add(HeaderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 50));
 
-        varFecha.setBackground(new java.awt.Color(255, 255, 255));
-        varFecha.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        varFecha.setForeground(new java.awt.Color(153, 153, 153));
-        varFecha.setText("Fecha");
-        varFecha.setBorder(null);
-        varFecha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                varFechaMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                varFechaMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                varFechaMousePressed(evt);
-            }
-        });
-        varFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                varFechaActionPerformed(evt);
-            }
-        });
-        MainPanel.add(varFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 220, 30));
-
         varEquipoLocal.setBackground(new java.awt.Color(255, 255, 255));
         varEquipoLocal.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         varEquipoLocal.setForeground(new java.awt.Color(153, 153, 153));
@@ -223,7 +200,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
             }
         });
         MainPanel.add(varEquipoVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 220, 30));
-        MainPanel.add(NameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 220, 10));
         MainPanel.add(LastNameSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 220, 10));
         MainPanel.add(CareerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 220, 10));
         MainPanel.add(TeamSoccerSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 220, 10));
@@ -294,6 +270,12 @@ public class RegistrarPartido extends javax.swing.JFrame {
         });
         MainPanel.add(varGolesEquipoVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 220, 30));
 
+        DateChooser.setBackground(new java.awt.Color(255, 255, 255));
+        DateChooser.setForeground(new java.awt.Color(255, 255, 255));
+        DateChooser.setToolTipText("Seleccione la fecha");
+        DateChooser.setDateFormatString("dd/MM/yyyy");
+        MainPanel.add(DateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 220, 30));
+
         getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 500));
 
         pack();
@@ -342,15 +324,18 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
         Menu regresar = new Menu();
-        javax.swing.JOptionPane.showMessageDialog(this, "¡Partido de la fecha "+varFecha.getText()+" registrado correctamente!");
+        if(!varEquipoLocal.getText().equals("") && !varEquipoVisitante.getText().equals("") && !varGolesEquipoLocal.getText().equals("") && !varGolesEquipoVisitante.getText().equals("")){
+             String fecha1 =((JTextField)DateChooser.getDateEditor().getUiComponent()).getText();
 
-        regresar.setVisible(true);
-        dispose();
+            javax.swing.JOptionPane.showMessageDialog(this, "¡Partido de la fecha "+fecha1+" registrado correctamente!");
+            regresar.setVisible(true);
+            dispose();
+        }  
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void LoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseEntered
         // TODO add your handling code here:
-        LoginButton.setBackground(new Color(0, 153, 0));
+        LoginButton.setBackground(new Color(51, 255, 51));
         
     }//GEN-LAST:event_LoginButtonMouseEntered
 
@@ -359,35 +344,13 @@ public class RegistrarPartido extends javax.swing.JFrame {
         LoginButton.setBackground(new Color(0, 102, 0));
     }//GEN-LAST:event_LoginButtonMouseExited
 
-    private void varFechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varFechaMousePressed
-        // TODO add your handling code here:
-        if(varFecha.getText().equals("Fecha")) {
-            varFecha.setText("");
-            varFecha.setForeground(Color.black);
-        }
-        if(varGolesEquipoLocal.getText().equals("Equipo local")){
-            varGolesEquipoLocal.setForeground(Color.gray);
-        }
-        if(varEquipoVisitante.getText().equals("Goles de equipo local")){
-            varEquipoVisitante.setForeground(Color.gray);
-        }
-        if(varGolesEquipoVisitante.getText().equals("Equipo visitante")){
-            varGolesEquipoVisitante.setForeground(Color.gray);
-        }
-        if(varGolesEquipoVisitante.getText().equals("Goles de equipo visitante")){
-            varGolesEquipoVisitante.setForeground(Color.gray);
-        }
-    }//GEN-LAST:event_varFechaMousePressed
-
     private void varEquipoLocalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEquipoLocalMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_varEquipoLocalMouseEntered
 
     private void varEquipoLocalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEquipoLocalMousePressed
         // TODO add your handling code here:
-        if(varFecha.getText().equals("Fecha")) {
-            varFecha.setForeground(Color.gray);
-        }
+
         if(varEquipoLocal.getText().equals("Equipo local")){
             varEquipoLocal.setText("");
             varEquipoLocal.setForeground(Color.black);
@@ -406,9 +369,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     private void varGolesEquipoLocalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varGolesEquipoLocalMousePressed
         // TODO add your handling code here:
-        if(varFecha.getText().equals("Fecha")) {
-            varFecha.setForeground(Color.gray);
-        }
+       
         if(varEquipoLocal.getText().equals("Equipo local")){
             varEquipoLocal.setForeground(Color.gray);
         }
@@ -429,9 +390,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private void varEquipoVisitanteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEquipoVisitanteMousePressed
         // TODO add your handling code here:
         
-        if(varFecha.getText().equals("Fecha")) {
-            varFecha.setForeground(Color.gray);
-        }
         if(varEquipoLocal.getText().equals("Equipo local")){
             varEquipoLocal.setForeground(Color.gray);
         }
@@ -473,9 +431,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private void varGolesEquipoVisitanteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varGolesEquipoVisitanteMousePressed
         // TODO add your handling code here:
         
-        if(varFecha.getText().equals("Fecha")) {
-            varFecha.setForeground(Color.gray);
-        }
         if(varEquipoLocal.getText().equals("Equipo local")){
             varEquipoLocal.setForeground(Color.gray);
         }
@@ -494,7 +449,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
 
     private void BackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseEntered
         // TODO add your handling code here:
-        BackButton.setBackground(new Color(0, 153, 0));
+        BackButton.setBackground(new Color(51, 255, 51));
     }//GEN-LAST:event_BackButtonMouseEntered
 
     private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
@@ -505,22 +460,6 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private void varEquipoLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varEquipoLocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_varEquipoLocalActionPerformed
-
-    private void varFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_varFechaActionPerformed
-
-    private void varFechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varFechaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_varFechaMouseClicked
-
-    private void varFechaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varFechaMouseExited
-        // TODO add your handling code here:
-        if(varFecha.getText().equals("")){
-            varFecha.setText("Fecha");
-            varFecha.setForeground(Color.gray);
-        }
-    }//GEN-LAST:event_varFechaMouseExited
 
     private void varEquipoLocalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_varEquipoLocalMouseExited
         // TODO add your handling code here:
@@ -589,6 +528,7 @@ public class RegistrarPartido extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JSeparator CareerSeparator;
+    private com.toedter.calendar.JDateChooser DateChooser;
     private javax.swing.JSeparator EmailSeparator;
     private javax.swing.JButton ExitButton;
     private javax.swing.JPanel HeaderPanel;
@@ -596,12 +536,10 @@ public class RegistrarPartido extends javax.swing.JFrame {
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel LogoUPC;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JSeparator NameSeparator;
     private javax.swing.JLabel SingIn;
     private javax.swing.JSeparator TeamSoccerSeparator;
     private javax.swing.JTextField varEquipoLocal;
     private javax.swing.JTextField varEquipoVisitante;
-    private javax.swing.JTextField varFecha;
     private javax.swing.JTextField varGolesEquipoLocal;
     private javax.swing.JTextField varGolesEquipoVisitante;
     // End of variables declaration//GEN-END:variables

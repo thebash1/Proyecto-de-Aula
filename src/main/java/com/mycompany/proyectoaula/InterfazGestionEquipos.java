@@ -1,10 +1,13 @@
 package com.mycompany.proyectoaula;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -81,8 +84,8 @@ public class InterfazGestionEquipos extends JFrame implements ActionListener {
         textArea = new JTextArea();
         textArea.setBounds(10, 350, 560, 200);
         add(textArea);
-        
         setVisible(true);
+
     }
 
     @Override
@@ -160,7 +163,19 @@ public class InterfazGestionEquipos extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        InterfazGestionEquipos interfazGestionEquipos = new InterfazGestionEquipos();
+        InterfazGestionEquipos frame = new InterfazGestionEquipos();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // Calcular las coordenadas para centrar el JFrame
+        int x = (screenSize.width - frame.getWidth()) / 2;
+        int y = (screenSize.height - frame.getHeight()) / 2;
+
+        // Establecer la posición del JFrame
+        frame.setLocation(x, y);
+
+        // Establecer la operación de cierre del JFrame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
 
     }
 }

@@ -43,7 +43,7 @@ public class Archivo {
     } //cierre de metodo leer datos
 
     
-    public void EliminarCliente(String documento) throws IOException{
+    public void EliminarDatos(String documento) throws IOException{
         ArrayList<Object []> DatosArchivo = this.LecturaDatos();
         this.EliminarArchivo();
         for (Object[] cliente : DatosArchivo) {
@@ -73,6 +73,7 @@ public class Archivo {
     
     
     public void ActualizarDatos(String documento){
+        
         
         
         

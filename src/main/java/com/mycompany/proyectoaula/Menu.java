@@ -42,7 +42,7 @@ public class Menu extends javax.swing.JFrame {
         setResizable(false);
 
         MainPanel.setBackground(new java.awt.Color(255, 255, 255));
-        MainPanel.setPreferredSize(new java.awt.Dimension(500, 500));
+        MainPanel.setPreferredSize(new java.awt.Dimension(400, 500));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HeaderPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -103,7 +103,7 @@ public class Menu extends javax.swing.JFrame {
         MenuTittle.setText("MENÚ");
         MainPanel.add(MenuTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 120, 50));
 
-        ToRegisterButton.setBackground(new java.awt.Color(0, 153, 204));
+        ToRegisterButton.setBackground(new java.awt.Color(0, 102, 0));
         ToRegisterButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         ToRegisterButton.setForeground(new java.awt.Color(0, 0, 0));
         ToRegisterButton.setText("REGISTRAR PARTIDOS");
@@ -124,9 +124,9 @@ public class Menu extends javax.swing.JFrame {
         });
         MainPanel.add(ToRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 200, 50));
 
-        ManageButton.setBackground(new java.awt.Color(51, 51, 51));
+        ManageButton.setBackground(new java.awt.Color(0, 102, 0));
         ManageButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        ManageButton.setForeground(new java.awt.Color(255, 255, 255));
+        ManageButton.setForeground(new java.awt.Color(0, 0, 0));
         ManageButton.setText("GESTIONAR EQUIPOS");
         ManageButton.setBorder(null);
         ManageButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -145,9 +145,9 @@ public class Menu extends javax.swing.JFrame {
         });
         MainPanel.add(ManageButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 200, 50));
 
-        ResultsButton.setBackground(new java.awt.Color(51, 51, 51));
+        ResultsButton.setBackground(new java.awt.Color(0, 102, 0));
         ResultsButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        ResultsButton.setForeground(new java.awt.Color(255, 255, 255));
+        ResultsButton.setForeground(new java.awt.Color(0, 0, 0));
         ResultsButton.setText("VER RESULTADOS");
         ResultsButton.setBorder(null);
         ResultsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -170,7 +170,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,12 +224,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void ToRegisterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseEntered
         // TODO add your handling code here:
-        ToRegisterButton.setBackground(new Color(0, 51, 204));
+        ToRegisterButton.setBackground(new Color(51, 255, 51));
     }//GEN-LAST:event_ToRegisterButtonMouseEntered
 
     private void ToRegisterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToRegisterButtonMouseExited
         // TODO add your handling code here:
-        ToRegisterButton.setBackground(new Color(0, 153, 204));
+        ToRegisterButton.setBackground(new Color(0, 102, 0));
     }//GEN-LAST:event_ToRegisterButtonMouseExited
 
     private void ManageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageButtonMouseExited
@@ -239,12 +239,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void ManageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageButtonMouseEntered
         // TODO add your handling code here:
-        ManageButton.setBackground(new Color(0, 153, 0));
+        ManageButton.setBackground(new Color(51, 255, 51));
     }//GEN-LAST:event_ManageButtonMouseEntered
 
     private void ResultsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsButtonMouseEntered
         // TODO add your handling code here:
-        ResultsButton.setBackground(new Color(0, 153, 0));
+        ResultsButton.setBackground(new Color(51, 255, 51));
     }//GEN-LAST:event_ResultsButtonMouseEntered
 
     private void ResultsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsButtonMouseExited
